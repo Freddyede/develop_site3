@@ -29,7 +29,7 @@ class HomeController extends AbstractController
         $date = new \DateTime();
         $user = $this->getDoctrine()->getRepository(Product::class)->findAll();
         $jsonContent = $serializer->serialize($user, 'json');
-        $response->setContent($jsonContent);cd
+        $response->setContent($jsonContent);
         $response->headers->set('Content-Type', 'application/json');
         $response->headers->set('Access-Control-Allow-Origin','*');
         return $response;
